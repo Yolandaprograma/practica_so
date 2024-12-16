@@ -33,7 +33,7 @@ int main (int argc, char *argv[]){
     //Iniciem un bucle que llegirà dades del teclat (entrada estàndard) i les escriurà a l'arxiu.
     //read(0, buf, sizeof(buf)) llegeix fins a 1024 bytes des de l'entrada estàndard (0 representa l'entrada estàndard).
     //El bucle continuarà mentre hi hagi bytes llegits (majors que 0).
-    while (bytes_read =  read(0, buf, sizeof(buf))>0){
+    while ((bytes_read =  read(0, buf, sizeof(buf)))>0){
         // Si l'escriptura a l'arxiu falla, imprimim un missatge d'error i tanquem l'arxiu.
         if (write(fd, buf, bytes_read) == -1){
             perror("ERROR: no s'ha pogut escriue en l'arxiu");
