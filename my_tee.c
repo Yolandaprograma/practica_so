@@ -8,8 +8,7 @@
 int main (int argc, char *argv[]){
     if (argc < 2) { //Comprovem si el nombre d'arguments passats és menor que 2.
         perror("ERROR: cap argument introduït"); //Si és així, el programa no té el nom de l'arxiu i termina amb un missatge d'error.
-        exit (-1); //Terminem el programa amb un codi d'error -1.
-        
+        exit (-1); //Terminem el programa amb un codi d'error -1.  
     }
     // Intentem obrir l'arxiu amb els següents paràmetres:
     // - O_WRONLY: Només volem escriure a l'arxiu.
@@ -18,7 +17,8 @@ int main (int argc, char *argv[]){
     // El permís 0644 significa que el propietari té permisos de lectura i escriptura,
     // mentre que el grup i els altres usuaris només tenen permisos de lectura.
     int fd = open(argv[1], O_WRONLY | O_APPEND | O_CREAT, 0644);
-     //Si l'obertura de l'arxiu falla (fd és -1), imprimim un missatge d'error i terminem el programa.    if(fd == -1){
+     //Si l'obertura de l'arxiu falla (fd és -1), imprimim un missatge d'error i terminem el programa.    
+    if(fd == -1){
         perror("ERROR en obrir el fitxer");
         exit (-1);
     }
@@ -26,7 +26,7 @@ int main (int argc, char *argv[]){
 
      //Definim un buffer per emmagatzemar les dades llegides
     char buf[1024];
-    ssize_t byte_read; //Variable que emmagatzemarà el nombre de bytes llegits.
+    ssize_t bytes_read; //Variable que emmagatzemarà el nombre de bytes llegits.
 
 
 
@@ -52,7 +52,7 @@ int main (int argc, char *argv[]){
     // Finalment, tanquem l'arxiu. Si el tancament falla, es mostra un error.
     if(close(fd) == -1){
         perror("ERROR al tancar l'arxiu"){
-            exit(-1); // Terminem el programa amb un error si no es pot tancar l'arxiu correctament.
+        exit(-1); // Terminem el programa amb un error si no es pot tancar l'arxiu correctament.
         }
         
     return 0;// Terminem el programa amb èxit (valor de retorn 0).
