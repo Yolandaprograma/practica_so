@@ -51,9 +51,9 @@ int main (int argc, char *argv[]){
     }
     // Finalment, tanquem l'arxiu. Si el tancament falla, es mostra un error.
     if(close(fd) == -1){
-        perror("ERROR al tancar l'arxiu"){
+        perror("ERROR al tancar l'arxiu");
         exit(-1); // Terminem el programa amb un error si no es pot tancar l'arxiu correctament.
         }
-        
+    
     return 0;// Terminem el programa amb èxit (valor de retorn 0).
 }
