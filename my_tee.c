@@ -4,7 +4,6 @@
 #include <fcntl.h> //S'inclou per treballar amb arxius a baix nivell (com open, O_CREAT, O_WRONLY, O_APPEND).
 #include <unistd.h>  //S'inclou per funcions relacionades amb la manipulació d'arxius i entrada/sortida (com read, write, close).
 
-
 int main (int argc, char *argv[]){
     if (argc < 2) { //Comprovem si el nombre d'arguments passats és menor que 2.
         perror("ERROR: cap argument introduït"); //Si és així, el programa no té el nom de l'arxiu i termina amb un missatge d'error.
@@ -23,12 +22,9 @@ int main (int argc, char *argv[]){
         exit (-1);
     }
 
-
      //Definim un buffer per emmagatzemar les dades llegides
     char buf[1024];
     ssize_t bytes_read; //Variable que emmagatzemarà el nombre de bytes llegits.
-
-
 
     //Iniciem un bucle que llegirà dades del teclat (entrada estàndard) i les escriurà a l'arxiu.
     //read(0, buf, sizeof(buf)) llegeix fins a 1024 bytes des de l'entrada estàndard (0 representa l'entrada estàndard).
