@@ -1,4 +1,3 @@
-
 //S'inclou les llibreria necesàries.
 #include <stdio.h> //Llibreria per utilizar funcions d'entrada/sortida com perror i printf. 
 #include <stdlib.h> //S'inclou per utilitzar funcions com exit (per sortir del programa) i altres controls
@@ -56,4 +55,3 @@ int main(int argc, char *argv[]) {
     close(fd2);  // Tanquem el segon fitxer després de la lectura.
     return 0; // El programa acaba correctament, indicant que no hi ha hagut errors.
 }
-
